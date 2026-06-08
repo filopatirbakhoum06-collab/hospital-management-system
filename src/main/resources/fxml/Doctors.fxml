@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hospital.controller.DoctorController" spacing="20" styleClass="root">
+    
+    <!-- Top Configuration Bar -->
+    <HBox alignment="CENTER_LEFT" spacing="15" styleClass="card">
+        <padding><Insets top="15" right="20" bottom="15" left="20"/></padding>
+        
+        <Label text="🔍" style="-fx-text-fill: -text-muted;"/>
+        <TextField fx:id="searchField" promptText="Search Name, License, Specialization..." styleClass="text-field" prefWidth="300"/>
+        
+        <Region HBox.hgrow="ALWAYS"/>
+        
+        <Button text="+  Register New Doctor" onAction="#handleAddDoctor" styleClass="btn-primary"/>
+    </HBox>
+
+    <!-- Data Table Area -->
+    <VBox VBox.vgrow="ALWAYS" styleClass="card">
+        <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+        
+        <TableView fx:id="doctorTable" VBox.vgrow="ALWAYS" styleClass="table-view" onMouseClicked="#handleTableClick">
+            <columns>
+                <TableColumn fx:id="colId" text="ID" prefWidth="80">
+                    <cellValueFactory><PropertyValueFactory property="id"/></cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="colName" text="Full Name" prefWidth="200">
+                    <cellValueFactory><PropertyValueFactory property="name"/></cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="colSpecialization" text="Specialization" prefWidth="180">
+                    <cellValueFactory><PropertyValueFactory property="specialization"/></cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="colLicense" text="License Number" prefWidth="150">
+                    <cellValueFactory><PropertyValueFactory property="licenseNumber"/></cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="colPhone" text="Phone Number" prefWidth="150">
+                    <cellValueFactory><PropertyValueFactory property="phoneNumber"/></cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="colEmail" text="Email" prefWidth="200">
+                    <cellValueFactory><PropertyValueFactory property="email"/></cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="colFee" text="Consultation Fee" prefWidth="120" />
+            </columns>
+            <columnResizePolicy>
+                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+            </columnResizePolicy>
+        </TableView>
+
+        <!-- Empty State UI -->
+        <VBox fx:id="emptyState" alignment="CENTER" spacing="10" visible="false" managed="false">
+            <padding><Insets top="50" bottom="50"/></padding>
+            <Label text="⚕️" style="-fx-font-size: 60px;"/>
+            <Label text="No doctors found." style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: -text-main;"/>
+            <Label text="Try adjusting your search or add a new doctor." style="-fx-text-fill: -text-muted;"/>
+        </VBox>
+    </VBox>
+</VBox>

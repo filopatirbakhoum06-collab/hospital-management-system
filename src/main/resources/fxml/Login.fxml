@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Text?>
+
+<HBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hospital.controller.LoginController" styleClass="root">
+    
+    <!-- Left Side: Brand Panel -->
+    <VBox HBox.hgrow="ALWAYS" styleClass="login-left" alignment="CENTER" spacing="20">
+        <padding>
+            <Insets top="40" right="40" bottom="40" left="40"/>
+        </padding>
+        <Label text="HealthCare Pro" style="-fx-text-fill: white; -fx-font-size: 36px; -fx-font-weight: bold;"/>
+        <Label wrapText="true" text="Enterprise Management System" style="-fx-text-fill: white; -fx-font-size: 18px;"/>
+        <Region VBox.vgrow="ALWAYS" />
+        <Label wrapText="true" text="&quot;Streamlining Care. Enhancing Lives.&quot;" styleClass="login-quote"/>
+    </VBox>
+
+    <!-- Right Side: Login Form -->
+    <VBox prefWidth="400" minWidth="400" alignment="CENTER" style="-fx-background-color: -surface-color;">
+        <VBox alignment="CENTER_LEFT" spacing="20" maxWidth="300">
+            <padding>
+                <Insets top="40" right="40" bottom="40" left="40"/>
+            </padding>
+            <Label text="Sign In" style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: -text-main;"/>
+            <Label text="Enter your admin credentials" style="-fx-text-fill: -text-muted;"/>
+
+            <VBox spacing="5">
+                <Label text="Username" style="-fx-font-weight: bold; -fx-text-fill: -text-main;"/>
+                <TextField fx:id="usernameField" promptText="admin" styleClass="text-field" prefHeight="40"/>
+            </VBox>
+            
+            <VBox spacing="5">
+                <Label text="Password" style="-fx-font-weight: bold; -fx-text-fill: -text-main;"/>
+                <PasswordField fx:id="passwordField" promptText="••••••••" styleClass="password-field" prefHeight="40"/>
+            </VBox>
+            
+            <Label fx:id="errorLabel" text="Invalid credentials!" style="-fx-text-fill: #EF4444;" visible="false"/>
+
+            <Button text="SECURE LOGIN" onAction="#handleLogin" maxWidth="Infinity" styleClass="btn-primary" prefHeight="45"/>
+        </VBox>
+    </VBox>
+</HBox>

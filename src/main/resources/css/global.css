@@ -1,0 +1,102 @@
+/* Beautiful Modern Enterprise CSS */
+.root {
+    -fx-font-family: "Segoe UI", "Inter", sans-serif;
+    -bg-color: #F8FAFC;
+    -surface-color: #FFFFFF;
+    -sidebar-color: #1E293B;
+    -primary-color: #0EA5E9;
+    -primary-hover: #0284C7;
+    -text-main: #334155;
+    -text-muted: #64748B;
+    -text-light: #F8FAFC;
+    -fx-background-color: -bg-color;
+}
+
+/* Typography */
+.header-text {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -text-main;
+}
+
+/* Card & Surface Styling */
+.card {
+    -fx-background-color: -surface-color;
+    -fx-background-radius: 8px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.05), 10, 0, 0, 4);
+}
+
+/* Buttons */
+.btn-primary {
+    -fx-background-color: -primary-color;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 6px;
+    -fx-padding: 10px 20px;
+    -fx-cursor: hand;
+}
+.btn-primary:hover {
+    -fx-background-color: -primary-hover;
+}
+
+/* Forms & Inputs */
+.text-field, .password-field, .combo-box {
+    -fx-background-color: #F1F5F9;
+    -fx-background-radius: 6px;
+    -fx-padding: 10px;
+    -fx-border-color: #E2E8F0;
+    -fx-border-radius: 6px;
+    -fx-border-width: 1px;
+    -fx-text-fill: -text-main;
+}
+.text-field:focused, .password-field:focused, .combo-box:focused {
+    -fx-border-color: -primary-color;
+    -fx-background-color: -surface-color;
+}
+
+/* Sidebar Layout */
+.sidebar {
+    -fx-background-color: -sidebar-color;
+}
+.sidebar-btn {
+    -fx-background-color: transparent;
+    -fx-text-fill: -text-muted;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-alignment: BASELINE_LEFT;
+    -fx-padding: 15px 25px;
+    -fx-cursor: hand;
+}
+.sidebar-btn:hover, .sidebar-btn:selected {
+    -fx-background-color: rgba(255,255,255,0.05);
+    -fx-text-fill: -text-light;
+    -fx-border-color: transparent transparent transparent -primary-color;
+    -fx-border-width: 0 0 0 4px;
+}
+
+/* Login Page Specifics */
+.login-left {
+    -fx-background-color: linear-gradient(to bottom right, #0EA5E9, #1E40AF);
+}
+.login-quote {
+    -fx-text-fill: rgba(255,255,255,0.8);
+    -fx-font-size: 16px;
+}
+
+/* Tables */
+.table-view {
+    -fx-background-color: transparent;
+    -fx-border-color: #E2E8F0;
+    -fx-border-radius: 8px;
+}
+.table-view .column-header {
+    -fx-background-color: #F1F5F9;
+    -fx-padding: 10px;
+}
+.table-row-cell {
+    -fx-background-color: -surface-color;
+    -fx-border-color: transparent transparent #F1F5F9 transparent;
+}
+.table-row-cell:hover {
+    -fx-background-color: #F8FAFC;
+}

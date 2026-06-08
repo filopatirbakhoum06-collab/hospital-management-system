@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.shape.Circle?>
+
+<HBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hospital.controller.MainLayoutController" styleClass="root">
+    
+    <!-- LEFT SIDEBAR (Collapsible) -->
+    <VBox fx:id="sidebar" prefWidth="250" minWidth="250" styleClass="sidebar">
+        <!-- Logo Area -->
+        <HBox alignment="CENTER_LEFT" spacing="15" prefHeight="70" style="-fx-border-color: transparent transparent rgba(255,255,255,0.1) transparent; -fx-border-width: 1px;">
+            <padding><Insets left="20"/></padding>
+            <Label text="✚" style="-fx-font-size: 24px; -fx-text-fill: -primary-color;"/>
+            <Label fx:id="brandLabel" text="HealthCare Pro" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: white;"/>
+        </HBox>
+
+        <!-- Navigation Links -->
+        <VBox spacing="5" VBox.vgrow="ALWAYS">
+            <padding><Insets top="20"/></padding>
+            <Button text="🏠  Dashboard" onAction="#showDashboard" maxWidth="Infinity" styleClass="sidebar-btn"/>
+            <Button text="👥  Patients" onAction="#showPatients" maxWidth="Infinity" styleClass="sidebar-btn"/>
+            <Button text="🩺  Doctors" onAction="#showDoctors" maxWidth="Infinity" styleClass="sidebar-btn"/>
+            <Button text="📅  Appointments" onAction="#showAppointments" maxWidth="Infinity" styleClass="sidebar-btn"/>
+        </VBox>
+
+        <!-- Sidebar Footer / Logout -->
+        <VBox spacing="10">
+            <padding><Insets bottom="20" left="20"/></padding>
+            <Button text="◀  Collapse" onAction="#toggleSidebar" style="-fx-background-color: transparent; -fx-text-fill: -text-muted; -fx-cursor: hand;"/>
+            <Button text="🚪  Sign Out" onAction="#handleLogout" style="-fx-background-color: transparent; -fx-text-fill: #EF4444; -fx-cursor: hand; -fx-font-weight: bold;"/>
+        </VBox>
+    </VBox>
+
+    <!-- RIGHT CONTENT AREA -->
+    <VBox HBox.hgrow="ALWAYS" style="-fx-background-color: -bg-color;">
+        
+        <!-- Header (Breadcrumbs, Search, Profile) -->
+        <HBox alignment="CENTER_LEFT" prefHeight="70" style="-fx-background-color: -surface-color; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.05), 5, 0, 0, 2);">
+            <padding><Insets left="30" right="30"/></padding>
+            
+            <Label fx:id="pageTitle" text="Dashboard" styleClass="header-text"/>
+            
+            <Region HBox.hgrow="ALWAYS"/>
+            
+            <!-- Header Tools -->
+            <HBox alignment="CENTER" spacing="20">
+                <TextField promptText="🔍 Quick Search..." styleClass="text-field" prefWidth="250" style="-fx-background-radius: 20px;"/>
+                <Label text="🔔" style="-fx-font-size: 18px; -fx-cursor: hand;"/>
+                <HBox alignment="CENTER" spacing="10">
+                    <Circle radius="16" fill="-primary-color"/>
+                    <Label text="Admin User" style="-fx-font-weight: bold;"/>
+                </HBox>
+            </HBox>
+        </HBox>
+
+        <!-- DYNAMIC CONTENT PANE -->
+        <!-- This is where Dashboard, Patients, etc., will be injected -->
+        <StackPane fx:id="contentArea" VBox.vgrow="ALWAYS">
+            <padding><Insets top="30" right="30" bottom="30" left="30"/></padding>
+            <!-- Content loaded via Controller -->
+        </StackPane>
+        
+    </VBox>
+</HBox>

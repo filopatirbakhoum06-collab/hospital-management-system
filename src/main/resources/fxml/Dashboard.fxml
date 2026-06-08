@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.shape.Circle?>
+
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hospital.controller.DashboardController" spacing="25" styleClass="root">
+    
+    <!-- Top Summary Cards -->
+    <HBox spacing="20">
+        
+        <!-- Summary Card: Patients -->
+        <VBox styleClass="card" HBox.hgrow="ALWAYS" prefHeight="100" alignment="CENTER_LEFT" spacing="5">
+            <padding><Insets top="15" right="20" bottom="15" left="20"/></padding>
+            <Label text="👥 Total Patients" style="-fx-text-fill: -text-muted; -fx-font-weight: bold;"/>
+            <Label fx:id="lblTotalPatients" text="0" style="-fx-font-size: 32px; -fx-font-weight: bold; -fx-text-fill: -text-main;"/>
+        </VBox>
+
+        <!-- Summary Card: Doctors -->
+        <VBox styleClass="card" HBox.hgrow="ALWAYS" prefHeight="100" alignment="CENTER_LEFT" spacing="5">
+            <padding><Insets top="15" right="20" bottom="15" left="20"/></padding>
+            <Label text="🩺 Total Doctors" style="-fx-text-fill: -text-muted; -fx-font-weight: bold;"/>
+            <Label fx:id="lblTotalDoctors" text="0" style="-fx-font-size: 32px; -fx-font-weight: bold; -fx-text-fill: -text-main;"/>
+        </VBox>
+
+        <!-- Summary Card: Total Appts -->
+        <VBox styleClass="card" HBox.hgrow="ALWAYS" prefHeight="100" alignment="CENTER_LEFT" spacing="5">
+            <padding><Insets top="15" right="20" bottom="15" left="20"/></padding>
+            <Label text="📅 Appointments" style="-fx-text-fill: -text-muted; -fx-font-weight: bold;"/>
+            <Label fx:id="lblTotalAppts" text="0" style="-fx-font-size: 32px; -fx-font-weight: bold; -fx-text-fill: -text-main;"/>
+        </VBox>
+
+        <!-- Summary Card: Available Slots -->
+        <VBox styleClass="card" HBox.hgrow="ALWAYS" prefHeight="100" alignment="CENTER_LEFT" spacing="5" style="-fx-border-color: transparent transparent transparent -primary-color; -fx-border-width: 0 0 0 5px; -fx-border-radius: 8px;">
+            <padding><Insets top="15" right="20" bottom="15" left="15"/></padding>
+            <Label text="🟢 Available Slots" style="-fx-text-fill: -text-muted; -fx-font-weight: bold;"/>
+            <Label fx:id="lblAvailableSlots" text="0" style="-fx-font-size: 32px; -fx-font-weight: bold; -fx-text-fill: -text-main;"/>
+        </VBox>
+    </HBox>
+
+    <!-- Main Content Area: Charts & Activity -->
+    <HBox spacing="25" VBox.vgrow="ALWAYS">
+        
+        <!-- Left Section: Analytics Chart -->
+        <VBox styleClass="card" HBox.hgrow="ALWAYS" spacing="10">
+            <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+            <Label text="Appointment Distribution" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: -text-main;"/>
+            <PieChart fx:id="appointmentChart" VBox.vgrow="ALWAYS" legendSide="BOTTOM" labelsVisible="true"/>
+        </VBox>
+        
+        <!-- Right Section: Recent Activity -->
+        <VBox styleClass="card" prefWidth="350" minWidth="350" spacing="15">
+            <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+            <HBox alignment="CENTER_LEFT">
+                <Label text="Recent Activity" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: -text-main;"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Label text="View All" style="-fx-text-fill: -primary-color; -fx-cursor: hand;"/>
+            </HBox>
+            
+            <ListView fx:id="activityList" VBox.vgrow="ALWAYS" style="-fx-background-color: transparent; -fx-border-color: transparent;"/>
+            
+            <!-- Empty State for Activity -->
+            <VBox fx:id="emptyActivityState" alignment="CENTER" spacing="10" visible="false" managed="false" VBox.vgrow="ALWAYS">
+                <Label text="📭" style="-fx-font-size: 40px;"/>
+                <Label text="No recent activity found." style="-fx-text-fill: -text-muted;"/>
+            </VBox>
+        </VBox>
+        
+    </HBox>
+</VBox>
