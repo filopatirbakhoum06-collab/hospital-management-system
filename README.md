@@ -57,11 +57,11 @@ The application is structured using the **Model-View-Controller (MVC)** architec
 
 | Login Screen | Dashboard Overview |
 | :---: | :---: |
-| <img src="docs/screenshots/01_login.png" width="400"/> | <img src="docs/screenshots/dashboard.png" width="400"/> |
+| <img src="docs/screenshots/login.png" width="400"/> | <img src="docs/screenshots/dashboard.png" width="400"/> |
 
 | Patients Directory | Appointment Scheduling |
 | :---: | :---: |
-| <img src="docs/screenshots/03_patients.png" width="400"/> | <img src="docs/screenshots/04_appointments.png" width="400"/> |
+| <img src="docs/screenshots/patients.png" width="400"/> | <img src="docs/screenshots/04_appointments.png" width="400"/> |
 
 *(Note: Replace placeholder images in `docs/screenshots` with actual application captures).*
 
