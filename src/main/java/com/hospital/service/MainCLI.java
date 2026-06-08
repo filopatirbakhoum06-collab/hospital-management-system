@@ -1,5 +1,5 @@
 package com.hospital.service;
-
+import com.hospital.model.Appointment;
 import com.hospital.model.Doctor;
 import com.hospital.model.Patient;
 import java.util.ArrayList;

@@ -90,7 +90,7 @@ public class HospitalSystem {
         return false;
     }
 
-    public Doctor getDoctorById(String doctorId) { {
+    public Doctor getDoctorById(String doctorId) { 
         for (Doctor doctor : doctors) {
             if (doctor.getId().equals(doctorId)) {
                 return doctor;
