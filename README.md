@@ -51,7 +51,6 @@ The application is structured using the **Model-View-Controller (MVC)** architec
    ```bash
    mvn javafx:run
    ```
-   *Note: The SQLite database (`hospital.db`) is automatically initialized upon the first run.*
 
 ## 📸 Screenshots
 
@@ -63,7 +62,6 @@ The application is structured using the **Model-View-Controller (MVC)** architec
 | :---: | :---: |
 | <img src="docs/screenshots/patients.png" width="400"/> | <img src="docs/screenshots/04_appointments.png" width="400"/> |
 
-*(Note: Replace placeholder images in `docs/screenshots` with actual application captures).*
 
 ## 🔮 Future Improvements
 
